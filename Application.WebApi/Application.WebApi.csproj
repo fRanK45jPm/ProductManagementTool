@@ -122,7 +122,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDisplayNameController.cs" />
-    <Compile Include="Filters\AuthorizationOperationFilter.cs" />
     <Compile Include="Filters\TokenValidator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
