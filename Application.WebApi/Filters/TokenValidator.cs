@@ -7,15 +7,20 @@
     using Application.Logic;
     using Application.Logic.Managers;
     using Unity;
+    using System.Linq;
+    using System.Collections.Generic;
 
     public class TokenValidatorAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {
-            string query = actionContext.Request.RequestUri.Query;
-            var nvc = System.Web.HttpUtility.ParseQueryString(query);
-            string token = nvc["api_key"];
+            string token;
 
+            var headers = actionContext.Request.Headers;
+            var filteredHeaders = (new List<string>()).AsEnumerable();
+            headers.TryGetValues("u-id", out filteredHeaders);
+            
+            token = filteredHeaders.FirstOrDefault();
             var container = UnityConfig.Container;
             var userManager = container.Resolve<IUserManager>();
             var userContext = container.Resolve<IUserContext>();

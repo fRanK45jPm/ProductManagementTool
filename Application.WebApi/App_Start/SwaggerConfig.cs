@@ -33,7 +33,7 @@ namespace Application.WebApi
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "Application.WebApi");
+                        c.SingleApiVersion("v1", "Product Management Tool");
 
                         // If you want the output Swagger docs to be indented properly, enable the "PrettyPrint" option.
                         //
@@ -102,7 +102,7 @@ namespace Application.WebApi
                         // those comments into the generated docs and UI. You can enable this by providing the path to one or
                         // more Xml comment files.
                         //
-                        c.IncludeXmlComments(@"C:\Users\john.manglinong\Source\Repos\ProductManagementTool\Application.WebApi\bin\Application.WebApi.xml");
+                        // c.IncludeXmlComments(@"C:\Users\john.manglinong\Source\Repos\ProductManagementTool\Application.WebApi\bin\Application.WebApi.xml");
 
                         // Swashbuckle makes a best attempt at generating Swagger compliant JSON schemas for the various types
                         // exposed in your API. However, there may be occasions when more control of the output is needed.
@@ -249,7 +249,7 @@ namespace Application.WebApi
                         // If your API supports ApiKey, you can override the default values.
                         // "apiKeyIn" can either be "query" or "header"
                         //
-                        //c.EnableApiKeySupport("apiKey", "header");
+                        c.EnableApiKeySupport("u-id", "header");
                     });
         }
     }
